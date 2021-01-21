@@ -1,14 +1,16 @@
 class Game
-    attr_reader :towers
+    attr_accessor :towers
     
-    def self.generate_towers
-        [[:S,:M,:L], [], []]
-    end
-
 
     def initialize
-        @towers = Game.generate_towers
+        @towers = [[:S,:M,:L], [], []]
     end
 
+    def player_input
+        starting_pos = gets.chomp.to_i
+        ending_pos = gets.chomp.to_i
+
+        move = [starting_pos, ending_pos]
+    end
 
 end
