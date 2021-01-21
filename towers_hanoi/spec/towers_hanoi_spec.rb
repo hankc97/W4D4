@@ -15,15 +15,20 @@ describe Game do
     describe "#player_input" do
         let(:starting_pos) {gets.chomp.to_i}
         let(:ending_pos) {gets.chomp.to_i}
+        let(:move) {[starting_pos, ending_pos]}
         it "input for starting position should be between 0 and 2" do
             
             expect(starting_pos).to be_between(0, 2)
         end
 
-        it "input for ending position should be between (0 and 2) and not (starting position)" do
+        it "input for ending position should be between (0 and 2)" do
             expect(ending_pos).to be_between(0, 2)
-            expect(ending_pos).to not_eq(starting_pos)
+            expect(ending_pos).not_to eq(starting_pos)
         end
+
+        # it "input for ending position should not be equal to starting position" do
+        #     expect(ending_pos).not_to eq(starting_pos)
+        # end
 
         it "should return an array [starting position, ending position]" do
             expect(move).to eq([starting_pos, ending_pos])
