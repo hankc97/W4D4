@@ -21,3 +21,23 @@ def my_tranpose(matrix)
     end
     new_matrix
 end
+
+def stock_picker(stock_prices)
+    sorted_prices = stock_prices.sort_by {|k,v| v}
+    
+    buy_sell_days = {"buy" => [], "sell" => []}
+
+    sorted_prices.each_index do |i|
+        if i == 0 || i == 1
+            buy_sell_days["buy"] << sorted_prices[i][0]
+        elsif i == sorted_prices.length - 1 || i == sorted_prices.length - 2
+            buy_sell_days["sell"] << sorted_prices[i][0]
+        end
+    end
+    buy_sell_days
+end
+
+stock_prices = {"day1" => 500, "day2" => 200, "day3" => 300, 
+    "day4" => 400, "day5" => 1000, "day6" => 600}
+
+
