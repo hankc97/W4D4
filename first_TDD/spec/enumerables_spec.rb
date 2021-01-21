@@ -33,3 +33,13 @@ describe "#my_tranpose" do
         expect(my_tranpose(matrix)).to eq(tranposed)
     end
 end
+
+describe "#stock_picker" do
+    let(:stock_prices) {{"day1" => 500, "day2" => 200, "day3" => 300, 
+        "day4" => 400, "day5" => 1000, "day6" => 600}}
+
+        
+
+
+
+end
