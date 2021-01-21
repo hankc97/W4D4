@@ -37,9 +37,24 @@ end
 describe "#stock_picker" do
     let(:stock_prices) {{"day1" => 500, "day2" => 200, "day3" => 300, 
         "day4" => 400, "day5" => 1000, "day6" => 600}}
-
+    let(:sorted_stock) {{"day2" => 200, "day3" => 300, "day4" => 400, 
+    "day1" => 500, "day6" => 600, "day5" => 100}}
+    let(:sorted_stock_days) {["day2", "day3", "day4", "day1", "day6", "day5"]} 
+    let(:buy_sell_days) {{"buy" => ["day2", "day3"] }}
+    # it should test if our hash sorts by value
+    # it should test if keys array equals hash.keys
+    # it should return hash that contains two min days and two max days
+    it "should test if the hash sorts by value" do 
+        expect(stock_prices).to eq(sorted_stock) 
+    end
         
+    it "should test hash's keys == hash.keys" do
+        expect(sorted_stock.keys).to eq(sorted_stock_days)
+    end
+
+    it "should return hash that contains two min days and two max days" do
 
 
+    end
 
 end
